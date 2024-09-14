@@ -59,3 +59,26 @@ function mostrarEstudiantesPro() {
 function obtenerEstudiantesPorEncimaDelPromedio(promedioGeneral) {
     return estudiantes.filter(estudiante => estudiante.obtenerPromedio() > promedioGeneral);
 }
+
+function obtenerEstudiantesPorDebajoDelPromedio(promedioGeneral) {
+    return estudiantes.filter(estudiante => estudiante.obtenerPromedio() < promedioGeneral);
+}
+
+function mostrarEstudiantesNoob() {
+    const promedioGeneral = calcularPromedioGeneral();
+    const estudiantesPorDebajoDelPromedio = obtenerEstudiantesPorDebajoDelPromedio(promedioGeneral);
+
+    let resultadoHtml = `<h2>Promedio General: ${promedioGeneral.toFixed(2)}</h2>`;
+
+    if (estudiantesPorDebajoDelPromedio.length > 0) {
+        resultadoHtml += '<h3>Estudiantes por Debajo del promedio:</h3><ul>';
+        estudiantesPorDebajoDelPromedio.forEach(estudiante => {
+            resultadoHtml += `<li>${estudiante.nombre} - Promedio: ${estudiante.obtenerPromedio().toFixed(2)}</li>`;
+        });
+        resultadoHtml += '</ul>';
+    } else {
+        resultadoHtml += '<p>No hay estudiantes por encima del promedio.</p>';
+    }
+
+    document.getElementById('resultado').innerHTML = resultadoHtml;
+}

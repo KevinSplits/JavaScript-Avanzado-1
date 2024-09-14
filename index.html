@@ -4,20 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos.css">
-    <title>Lista de Actividades</title>
+    <title>Gestión de Calificaciones</title>
 </head>
 <body>
     <div class="container">
-        <h1>Lista de Actividades </h1>
-        <a href="index2.html">Ir al otro ejercicio</a><br><br>
+        <h1>Gestión de Calificaciones </h1>
         <form>
-            <label for="act">Agregar hasta 10 actividades diarias:</label><br><br>
-            <input id="act" type="text" placeholder="Ingrese una actividad" />
-            <button type="button" onclick="agregarActividades()">Agregar</button>
-            <button type="button" onclick="mostrarActividades()">Mostrar Actividades</button>
+            <label>Agregar 5 estudiantes con sus calificaciones:</label><br><br>
+            <input id="nombre" type="text" placeholder="Nombre del estudiante" /><br><br>
+            <input id="notas" type="text" placeholder="Notas" /><br><br>
+            <button type="button" onclick="agregarEstudiantesySusNotas()">Agregar</button>
+            <button type="button" onclick="mostrarPromedio()">Mostrar Promedio General</button>
+            <button type="button" onclick="mostrarEstudiantesPro()">Estudiantes por encima del promedio</button>
+            <button type="button" onclick="mostrarEstudiantesNoob()">Estudiantes por debajo del promedio</button>
         </form>
         <div id="resultado"></div>
     </div>
-    <script src="tarea1.js"></script>
+    <script src="tarea2.js"></script>
 </body>
 </html>
